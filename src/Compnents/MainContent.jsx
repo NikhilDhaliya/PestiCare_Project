@@ -71,6 +71,7 @@ const MainContent = () => {
               id="leaf-upload"
               type="file"
               accept="image/*"
+              capture="environment"
               onChange={handleFileChange}
               className="hidden"
             />
