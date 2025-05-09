@@ -45,7 +45,7 @@ const HowItWorks = () => {
       <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-8 tracking-tight">
         How It Works
       </h2>
-      <div className="flex flex-wrap justify-center gap-8 max-w-5xl w-full">
+      <div className="flex flex-wrap justify-center gap-8  w-full">
         {steps.map((step, idx) => (
           <div
             key={idx}

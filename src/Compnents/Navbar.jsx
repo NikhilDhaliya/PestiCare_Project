@@ -4,8 +4,17 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const { i18n } = useTranslation();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language); // Track selected language
+  const [selectedLanguage, setSelectedLanguage] = useState(i18n.language);
+  const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -25,22 +34,38 @@ const Navbar = () => {
 
   const switchLanguage = (lang) => {
     i18n.changeLanguage(lang);
-    setSelectedLanguage(lang); // Update selected language
+    setSelectedLanguage(lang);
     setDropdownOpen(false);
   };
 
   return (
     <div className="relative" ref={dropdownRef}>
-      <header className="sticky top-0 z-30 flex items-center justify-between py-4 px-8 bg-white shadow-md border-b border-gray-200 animate-fade-in-down">
+      <header
+        className={`sticky top-0 z-30 flex items-center justify-between py-4 px-8 
+          bg-white border-b border-gray-200 
+          transition-all duration-300 ${
+            scrolled
+              ? "shadow-xl backdrop-blur-md"
+              : "shadow-md backdrop-blur-none"
+          }`}
+        style={{ backdropFilter: scrolled ? "blur(8px)" : "none" }}
+      >
         <div className="flex items-center gap-2">
-          <span className="inline-block text-green-600 animate-spin-slow">
+          <span
+            className="inline-block text-green-600"
+            style={{
+              animation: "bounce 1.5s infinite alternate",
+              transition: "color 0.3s",
+              color: "#22c55e",
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="currentColor"
-              className="w-8 h-8"
+              className="w-8 h-8 hover:scale-110 transition-transform duration-200"
             >
               <path
                 strokeLinecap="round"
@@ -49,7 +74,7 @@ const Navbar = () => {
               />
             </svg>
           </span>
-          <span className="font-extrabold text-green-700 text-2xl tracking-tight">
+          <span className="cursor-pointer font-extrabold text-green-700 text-2xl tracking-tight">
             PestiCare
           </span>
         </div>
@@ -106,6 +131,13 @@ const Navbar = () => {
           </div>
         </nav>
       </header>
+
+      <style>{`
+        @keyframes bounce {
+          0%, 100% { transform: translateY(0);}
+          50% { transform: translateY(-8px);}
+        }
+      `}</style>
     </div>
   );
 };
