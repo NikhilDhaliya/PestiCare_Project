@@ -12,7 +12,6 @@ const Footer = () => {
   return (
     <footer className="bg-white border-t border-green-200 mt-20 pt-10 pb-4 text-gray-700">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-start gap-10">
-        {/* Logo and About */}
         <div className="flex flex-col items-center md:items-start gap-2 md:w-1/3 text-center md:text-left">
           <div className="flex items-center gap-2 mb-2 justify-center md:justify-start">
             <span
@@ -66,7 +65,6 @@ const Footer = () => {
             ))}
           </nav>
         </div>
-        {/* Removed Connect with us / Social Media section */}
       </div>
 
       <div className="mt-8 border-t border-green-100 pt-4 text-center text-gray-400 text-sm flex flex-col items-center gap-2">
