@@ -138,7 +138,7 @@ const MainContent = () => {
   return (
     <div className="w-full flex flex-col items-center justify-center min-h-[80vh] bg-gradient-to-br from-green-50 via-white to-green-100 relative overflow-hidden">
       <video
-        src="/video.mp4"
+        src="video.mp4"
         autoPlay
         loop
         muted
