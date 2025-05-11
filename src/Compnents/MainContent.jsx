@@ -23,7 +23,7 @@ const DetailModal = ({ result, open, onClose }) => {
   if (!open) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div id="home" className="fixed inset-0 z-50 flex items-center justify-center">
       {/* Overlay */}
       <div
         className="fixed inset-0 bg-black/40 z-40"

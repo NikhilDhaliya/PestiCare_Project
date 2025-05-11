@@ -83,7 +83,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section className="w-full min-h-[70vh] flex flex-col items-center justify-center bg-gradient-to-br from-green-50 via-white to-green-100 py-16 px-4">
+    <section id="howItWorks" className="w-full min-h-[70vh] flex flex-col items-center justify-center bg-gradient-to-br from-green-50 via-white to-green-100 py-16 px-4">
       <h2 className="text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-8 tracking-tight">
         {t("howItWorks")}
       </h2>

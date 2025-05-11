@@ -86,19 +86,19 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8 text-base items-center">
           <a
-            href="#"
+            href="#home"
             className="text-gray-900 no-underline transition-colors duration-200 hover:text-green-700 hover:underline"
           >
             {t("home")}
           </a>
           <a
-            href="#"
+            href="#howItWorks"
             className="text-gray-900 no-underline transition-colors duration-200 hover:text-green-700 hover:underline"
           >
             {t("howItWorks")}
           </a>
           <a
-            href="#"
+            href="#contact"
             className="text-gray-900 no-underline transition-colors duration-200 hover:text-green-700 hover:underline"
           >
             {t("contact")}

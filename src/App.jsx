@@ -8,7 +8,6 @@ import HowItWorks from './Compnents/HowItWorks';
 
 const App = () => {
   const scrollRef = useRef(null);
-
   useEffect(() => {
     const scroll = new LocomotiveScroll({
       el: scrollRef.current,
@@ -23,7 +22,7 @@ const App = () => {
 
   return (
     <div ref={scrollRef} data-scroll-container style={{ minHeight: '100vh', background: 'linear-gradient(180deg, #eaffea 0%, #f6fff6 100%)' }}>
-      <Navbar />
+      <Navbar/>
       <MainContent />
       <HowItWorks />
       <Footer />
